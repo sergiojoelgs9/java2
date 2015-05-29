@@ -32,7 +32,11 @@ public class InterfazImc {
          
          //datos primitivos Falso"X Defecto"/Verdadero
          boolean valor=false;
-         boolean valor2=true;
+         
+         Imc otro=new Imc();
+         otro.setFlaco(true);
+         System.out.println(otro.isFlaco());
          
          
+
             }}

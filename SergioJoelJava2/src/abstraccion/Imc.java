@@ -8,6 +8,9 @@ public class Imc {
     //atributos*****************************************************************
     private float peso;
     private float altura;
+    private  boolean flaco;
+    
+  
    
     // constructor por defecto**************************************************
     public Imc() {
@@ -42,5 +45,18 @@ public class Imc {
     public void setAltura(float altura) {
         this.altura = altura;
     }
+
+    public boolean isFlaco() {
+        return flaco;
+    }
+
+    public void setFlaco(boolean flaco) {
+        this.flaco = flaco;
+    }
+
+    
+    
+    
+    
     
 }
