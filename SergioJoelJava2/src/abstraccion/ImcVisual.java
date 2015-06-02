@@ -47,6 +47,12 @@ public class ImcVisual extends javax.swing.JFrame {
 
         jLabel3.setText("Altura");
 
+        TextoPeso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextoPesoActionPerformed(evt);
+            }
+        });
+
         TextoAltura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextoAlturaActionPerformed(evt);
@@ -128,8 +134,10 @@ public class ImcVisual extends javax.swing.JFrame {
 
        Float peso=new Float(TextoPeso.getText());
        Float altura=new Float(TextoAltura.getText());
-       Imc imc=new Imc(peso, altura);
+       Imc nose=new Imc(peso, altura);
        
+     EtiquetaResultado.setText(""+nose.calcular()); 
+      
        
 
 
@@ -145,6 +153,10 @@ public class ImcVisual extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_BotonCalcularActionPerformed
+
+    private void TextoPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoPesoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextoPesoActionPerformed
 
     /**
      * @param args the command line arguments

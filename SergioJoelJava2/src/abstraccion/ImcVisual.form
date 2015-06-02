@@ -112,6 +112,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TextoPeso">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextoPesoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="TextoAltura">
           <Events>
