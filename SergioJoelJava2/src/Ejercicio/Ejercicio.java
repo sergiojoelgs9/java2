@@ -36,10 +36,13 @@ public class Ejercicio extends javax.swing.JFrame {
         EtiquetaAsccii = new javax.swing.JLabel();
         BotonEscrito = new javax.swing.JButton();
         EtiquetaEscrito = new javax.swing.JLabel();
+        botonborrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Introduce un frase");
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+
+        jLabel1.setText("INTRODUCE UNA FRASE");
 
         textFieldTexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,17 +50,24 @@ public class Ejercicio extends javax.swing.JFrame {
             }
         });
 
-        BotonAscci.setText("Puchar");
+        BotonAscci.setText("ASCII");
         BotonAscci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonAscciActionPerformed(evt);
             }
         });
 
-        BotonEscrito.setText("Puchar");
+        BotonEscrito.setText("TEXTO");
         BotonEscrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEscritoActionPerformed(evt);
+            }
+        });
+
+        botonborrar.setText("Borrar Todo");
+        botonborrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonborrarActionPerformed(evt);
             }
         });
 
@@ -66,27 +76,27 @@ public class Ejercicio extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(textFieldTexto)
+                        .addGap(27, 27, 27))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textFieldTexto)
-                                .addGap(13, 13, 13))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BotonAscci))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BotonEscrito))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(EtiquetaEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(EtiquetaAsccii, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(184, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
+                .addComponent(botonborrar)
+                .addGap(265, 265, 265))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(EtiquetaEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(BotonEscrito)
+                        .addComponent(BotonAscci)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(EtiquetaAsccii, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,23 +104,27 @@ public class Ejercicio extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(textFieldTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonborrar))
                 .addGap(18, 18, 18)
                 .addComponent(BotonAscci)
-                .addGap(18, 18, 18)
-                .addComponent(EtiquetaAsccii)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EtiquetaAsccii, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BotonEscrito)
                 .addGap(18, 18, 18)
-                .addComponent(EtiquetaEscrito)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addComponent(EtiquetaEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,42 +140,37 @@ public class Ejercicio extends javax.swing.JFrame {
 
     private void BotonEscritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEscritoActionPerformed
 
-        
- String algo=new String(textFieldTexto.getText());
-        algo.getBytes();
-        
-               
-       
+         String algo=new String(textFieldTexto.getText());
+        byte []text=algo.getBytes();
+        StringBuilder builder=new StringBuilder();
+        for (byte u : text) {
+            builder.append((char)u);
+            
+        }
+                
        EtiquetaEscrito.setText(algo); 
-
-
-
-
-
-
-
     }//GEN-LAST:event_BotonEscritoActionPerformed
 
     private void BotonAscciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAscciActionPerformed
    
              String algos=new String(textFieldTexto.getText());
-             byte []y=algos.getBytes();
+             byte []arreglo=algos.getBytes();
              StringBuilder builder=new StringBuilder();
             
-             for (byte mm : y) {
+             for (byte mm:arreglo) {
                  builder.append(mm);
-            
-        }
-             EtiquetaAsccii.setText(builder.toString());
-             
-             
-             
-       
-       
-        
-        
-        
+                 builder.append("-");
+                 
+                    }
+             EtiquetaAsccii.setText(builder.toString());      
     }//GEN-LAST:event_BotonAscciActionPerformed
+
+    private void botonborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonborrarActionPerformed
+
+             EtiquetaAsccii.setText("");
+             EtiquetaEscrito.setText("");
+             textFieldTexto.setText("");
+    }//GEN-LAST:event_botonborrarActionPerformed
     
     /**
      * @param args the command line arguments
@@ -203,6 +212,7 @@ public class Ejercicio extends javax.swing.JFrame {
     private javax.swing.JButton BotonEscrito;
     private javax.swing.JLabel EtiquetaAsccii;
     private javax.swing.JLabel EtiquetaEscrito;
+    private javax.swing.JButton botonborrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textFieldTexto;
