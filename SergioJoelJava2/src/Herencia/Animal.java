@@ -2,7 +2,7 @@
 package Herencia;
 
 public abstract class Animal{
-    //abstract es un modificaor np se puede crear un ojeto afuera de ella
+    //abstract es un modificador para la clase Animal, tambien no se puede crear un ojeto afuera de ella "Animal animal=new Animal();"
    
     private String nombre;
     private int edad;
