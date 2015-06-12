@@ -2,8 +2,7 @@
 package Herencia;
 
 
-public class Leon extends Animal implements ComportamientoSonido{
-    
+public class Pollo extends Animal implements ComportamientoSonido{
     
     //Clase del tipo del animal utilizamos la herencia de las clase Animal "extends" 
     //Implentamos con la interface ComportamientoSonido  "implements" con Override
@@ -12,7 +11,11 @@ public class Leon extends Animal implements ComportamientoSonido{
     @Override
     public String haceSonido() {
         
-        return "GGrrrrraaaa....!!!"+getNombre();
+        return "pio pio......!!!"+getNombre();
+    
     }
+    
+    
+    
     
 }

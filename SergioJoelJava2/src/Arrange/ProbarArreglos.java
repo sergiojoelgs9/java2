@@ -40,7 +40,11 @@ public class ProbarArreglos {
             for(byte mm:yy)
                 System.out.println((char)mm);
             
-            
+              
+       for(int m:x){
+             System.out.println("Este valor tiene un valor de"+m);
+             
+         }
             
             
             
