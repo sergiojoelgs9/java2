@@ -56,6 +56,10 @@
                           <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
                           <Component id="BotonValidar" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="EtiquetaValidar" min="-2" pref="328" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="40" max="32767" attributes="0"/>
               </Group>
@@ -68,7 +72,9 @@
                   <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="BotonValidar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="168" max="32767" attributes="0"/>
+                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <Component id="EtiquetaValidar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -83,6 +89,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonValidarActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="EtiquetaValidar">
         </Component>
       </SubComponents>
     </Container>

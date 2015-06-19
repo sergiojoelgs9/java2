@@ -30,6 +30,7 @@ public class FormularioEdad extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         BotonValidar = new javax.swing.JButton();
+        EtiquetaValidar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,7 +54,10 @@ public class FormularioEdad extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(188, 188, 188)
-                        .addComponent(BotonValidar)))
+                        .addComponent(BotonValidar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(EtiquetaValidar, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -63,7 +67,9 @@ public class FormularioEdad extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(BotonValidar)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(EtiquetaValidar)
+                .addGap(106, 106, 106))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -87,19 +93,20 @@ public class FormularioEdad extends javax.swing.JFrame {
    
         try {
             int edad=Integer.parseInt(jTextField1.getText());
-            System.out.println("Vamos a validar tu edad");
+           EtiquetaValidar.setText("Vamos a validar tu edad");
         //Con el Static aparece el metodo .ValidarEdad(); sin crear la clase
      
             ValidarEdad.ValidarEdad(edad);
-            System.out.println("Eres mayor de Edad");
+             EtiquetaValidar.setText("Eres mayor de Edad");
             //lanza la excepccion si es correct
             
-        } catch (MenordeEdadexception ex) {
-            System.out.println(ex.getMessage());
+        }
+            catch (MenordeEdadexception ex) {
+             EtiquetaValidar.setText(ex.getMessage());
          
         }catch(NumberFormatException ex){
             //exception de numerico
-            System.out.println("No se aceptan caracteres de escritura solo numerico");
+             EtiquetaValidar.setText("No se aceptan caracteres de escritura solo numerico");
         }
         
         
@@ -143,6 +150,7 @@ public class FormularioEdad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonValidar;
+    private javax.swing.JLabel EtiquetaValidar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
