@@ -8,10 +8,12 @@ public class ProbarValidaciones {
 
     public static void main(String[] args) {
       
+         
         try {
             int edad=9;
             System.out.println("Vamos a validar tu edad");
             //Con el Static aparece el metodo .ValidarEdad(); sin crear la clase
+           
             
             ValidarEdad.ValidarEdad(edad);
             System.out.println("Eres mayor de Edad");
