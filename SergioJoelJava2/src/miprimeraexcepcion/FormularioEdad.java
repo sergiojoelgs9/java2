@@ -15,7 +15,15 @@ public class FormularioEdad extends javax.swing.JFrame {
      * Creates new form FormularioEdad
      */
     public FormularioEdad() {
+       
         initComponents();
+        //para que aparesca un mensaje en el Frame
+        setTitle("Mis exception");
+        javax.swing.JFrame.setDefaultLookAndFeelDecorated(true);
+        //coloca una sombra en el Boton
+        setLocationRelativeTo(this);
+        
+        
     }
 
     /**
