@@ -1,7 +1,7 @@
 
 package EjercicioTipoExamen;
 
-public class Direccion {
+class Direccion {
     
     private String calle;
     private String colonia;
@@ -10,6 +10,10 @@ public class Direccion {
     private int numero;
 
     public Direccion() {
+    }
+  
+    public Direccion(int cp) {
+        this.cp = cp;
     }
 
     public Direccion(String municipio, int cp) {

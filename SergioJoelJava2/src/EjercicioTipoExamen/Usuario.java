@@ -2,7 +2,7 @@
 package EjercicioTipoExamen;
 
 
-public class Usuario extends Direccion{
+public class Usuario{
     
     private String nombre;
     private int edad;
