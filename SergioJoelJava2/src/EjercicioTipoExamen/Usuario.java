@@ -1,6 +1,4 @@
-
 package EjercicioTipoExamen;
-
 
 public class Usuario{
     
@@ -19,8 +17,7 @@ public class Usuario{
         this.direccion = direccion;
     }
     
-    
-    public String getNombre() {
+        public String getNombre() {
         return nombre;
     }
 

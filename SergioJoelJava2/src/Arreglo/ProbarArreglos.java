@@ -1,4 +1,4 @@
-package Arrange;
+package Arreglo;
 
 public class ProbarArreglos {
    
