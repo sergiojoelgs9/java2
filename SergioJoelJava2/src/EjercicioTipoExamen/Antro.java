@@ -11,6 +11,20 @@ public class Antro {
        
       //invocacion de metodos por cadena
         System.out.println(u1.getDireccion().getMunicipio());
+        
+        Bebida bebida=new Bebida();
+        bebida.setTipo("Alcoholica");
+        //se regresa un arreglo string 
+        String []bar=bebida.obtenerRecomendacion();
+     
+        for (String drink : bar) {
+        System.out.println("Bebida"+drink); 
+        }
+     
+        
+        
+        
+        
     }
     
 }
