@@ -1,11 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Colletions;
 
 import javax.swing.table.DefaultTableModel;
+import java.util.List;
+import java.util.Collections;
+
+
 
 /**
  *
@@ -13,9 +13,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class InterfaceColletions extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InterfaceColletions
-     */
+ 
     public InterfaceColletions() {
         initComponents();
     }
@@ -181,13 +179,17 @@ public class InterfaceColletions extends javax.swing.JFrame {
     private void jTextoEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextoEdadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextoEdadActionPerformed
-GeneradorUsuarios generadorUsuarios=new GeneradorUsuarios();
         
     private void jBotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonGuardarActionPerformed
+    GeneradorUsuarios generadorUsuarios=new GeneradorUsuarios();
+   
+    List<Usuario> u1=generadorUsuarios.getUsuarios();
+    Collections.sort(u1,new UsusarioPorNombre());
     
+
  jTablaUsuarios.setModel(new DefaultTableModel(new  String[]{"nombre","edad","email"},generadorUsuarios.getUsuarios().size()));
   int fila=0;
-        for (Usuario u : generadorUsuarios.getUsuarios()) {
+        for (Usuario u:u1) {
             jTablaUsuarios.setValueAt(u.getNombre(),fila,0);
             jTablaUsuarios.setValueAt(u.getEdad(),fila,1);
             jTablaUsuarios.setValueAt(u.getEmail(),fila,3);
