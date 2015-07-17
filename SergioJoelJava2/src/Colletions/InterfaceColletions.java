@@ -5,6 +5,8 @@
  */
 package Colletions;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author T-107
@@ -59,6 +61,11 @@ public class InterfaceColletions extends javax.swing.JFrame {
         });
 
         jBotonGuardar.setText("Guardar");
+        jBotonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonGuardarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Email");
 
@@ -67,15 +74,14 @@ public class InterfaceColletions extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1)
-                .addGap(89, 89, 89)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(72, 72, 72))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel1)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel2)
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel3))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jTextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -86,7 +92,7 @@ public class InterfaceColletions extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jBotonGuardar)))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +109,7 @@ public class InterfaceColletions extends javax.swing.JFrame {
                     .addComponent(jTextoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jBotonGuardar)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Agregar Usuarios", jPanel2);
@@ -114,9 +120,6 @@ public class InterfaceColletions extends javax.swing.JFrame {
 
         jTablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
                 {null, null, null}
             },
             new String [] {
@@ -130,23 +133,22 @@ public class InterfaceColletions extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jBotonCargarUsuarios))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addGap(132, 132, 132)
+                .addComponent(jBotonCargarUsuarios)
+                .addContainerGap(164, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addContainerGap()
                 .addComponent(jBotonCargarUsuarios)
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("MostrarUsuarios", jPanel3);
@@ -179,6 +181,20 @@ public class InterfaceColletions extends javax.swing.JFrame {
     private void jTextoEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextoEdadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextoEdadActionPerformed
+GeneradorUsuarios generadorUsuarios=new GeneradorUsuarios();
+        
+    private void jBotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonGuardarActionPerformed
+    
+ jTablaUsuarios.setModel(new DefaultTableModel(new  String[]{"nombre","edad","email"},generadorUsuarios.getUsuarios().size()));
+  int fila=0;
+        for (Usuario u : generadorUsuarios.getUsuarios()) {
+            jTablaUsuarios.setValueAt(u.getNombre(),fila,0);
+            jTablaUsuarios.setValueAt(u.getEdad(),fila,1);
+            jTablaUsuarios.setValueAt(u.getEmail(),fila,3);
+            fila++;
+            
+        }
+    }//GEN-LAST:event_jBotonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
