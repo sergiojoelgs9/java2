@@ -16,6 +16,7 @@ public class InterfaceColletions extends javax.swing.JFrame {
  
     public InterfaceColletions() {
         initComponents();
+        jBotonCargarUsuarios.setEnabled(false);
     }
 
     /**
@@ -41,6 +42,7 @@ public class InterfaceColletions extends javax.swing.JFrame {
         jBotonCargarUsuarios = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTablaUsuarios = new javax.swing.JTable();
+        jComboSeleccion = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +117,11 @@ public class InterfaceColletions extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(153, 255, 153));
 
         jBotonCargarUsuarios.setText("Cargar Usuarios");
+        jBotonCargarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonCargarUsuariosActionPerformed(evt);
+            }
+        });
 
         jTablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -126,27 +133,39 @@ public class InterfaceColletions extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTablaUsuarios);
 
+        jComboSeleccion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "...", "Ordenar Por Nombre", "Ordenar Por Edad" }));
+        jComboSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboSeleccionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jBotonCargarUsuarios)
-                .addContainerGap(164, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jBotonCargarUsuarios)
+                        .addGap(27, 27, 27)
+                        .addComponent(jComboSeleccion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)))
                 .addGap(20, 20, 20))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jBotonCargarUsuarios)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBotonCargarUsuarios)
+                    .addComponent(jComboSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("MostrarUsuarios", jPanel3);
@@ -159,7 +178,7 @@ public class InterfaceColletions extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,16 +206,27 @@ public class InterfaceColletions extends javax.swing.JFrame {
     Collections.sort(u1,new UsusarioPorNombre());
     
 
- jTablaUsuarios.setModel(new DefaultTableModel(new  String[]{"nombre","edad","email"},generadorUsuarios.getUsuarios().size()));
+ jTablaUsuarios.setModel(new DefaultTableModel(new String[]{"nombre","edad","email"},generadorUsuarios.getUsuarios().size()));
   int fila=0;
+    
         for (Usuario u:u1) {
             jTablaUsuarios.setValueAt(u.getNombre(),fila,0);
             jTablaUsuarios.setValueAt(u.getEdad(),fila,1);
-            jTablaUsuarios.setValueAt(u.getEmail(),fila,3);
+            jTablaUsuarios.setValueAt(u.getEmail(),fila,2);
             fila++;
             
         }
     }//GEN-LAST:event_jBotonGuardarActionPerformed
+
+    private void jBotonCargarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonCargarUsuariosActionPerformed
+       
+    }//GEN-LAST:event_jBotonCargarUsuariosActionPerformed
+
+    private void jComboSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboSeleccionActionPerformed
+        jBotonCargarUsuarios.setEnabled(true);
+        int indice=jComboSeleccion.getSelectedIndex();
+        
+    }//GEN-LAST:event_jComboSeleccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,6 +266,7 @@ public class InterfaceColletions extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBotonCargarUsuarios;
     private javax.swing.JButton jBotonGuardar;
+    private javax.swing.JComboBox jComboSeleccion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
