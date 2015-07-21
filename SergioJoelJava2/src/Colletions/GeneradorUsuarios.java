@@ -4,7 +4,6 @@ package Colletions;
 import java.util.ArrayList;
 import java.util.List;
 //paqueteria lista
-
 //paquteria de array list
 //tienen clases y metodos de ordenamiento
 //tiene el potencial de usarse para construir prototipos de base de datos NO SQL 

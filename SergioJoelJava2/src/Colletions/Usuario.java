@@ -5,10 +5,10 @@ package Colletions;
 public class Usuario {
     
     private String nombre;
-    private int edad;
+    private Integer edad;
     private String email;
 
-    public Usuario(String nombre, int edad, String email) {
+    public Usuario(String nombre, int edad, String email){
         this.nombre = nombre;
         this.edad = edad;
         this.email = email;
@@ -16,27 +16,27 @@ public class Usuario {
     
     
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre){
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public Integer getEdad(){
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad){
         this.edad = edad;
     }
 
-    public String getEmail() {
+    public String getEmail(){
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email){
         this.email = email;
     }
     
