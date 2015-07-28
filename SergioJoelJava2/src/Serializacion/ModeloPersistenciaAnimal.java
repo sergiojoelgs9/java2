@@ -1,5 +1,6 @@
 //clase tipo modelo "logica"
 //Persistencia Guardar
+
 package Serializacion;
 
 import java.io.*;

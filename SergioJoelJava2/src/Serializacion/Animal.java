@@ -9,7 +9,9 @@ public class Animal implements Serializable{
     //implemtamos la serializaion
    private String nombre;
    private boolean carnivoro;
-
+   
+   
+   
     public String getNombre() {
         return nombre;
     }
