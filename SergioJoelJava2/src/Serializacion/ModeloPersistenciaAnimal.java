@@ -1,5 +1,5 @@
 //clase tipo modelo "logica"
-//Persistencia Guardar
+//Persistencia Guardar...
 
 package Serializacion;
 

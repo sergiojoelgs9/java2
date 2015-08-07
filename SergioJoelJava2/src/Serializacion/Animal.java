@@ -1,6 +1,6 @@
-//clase POJO
+//clase POJO.
 package Serializacion;
-//compresor
+//compresor..
 
 import java.io.*;
 //entrad y salida serializable
