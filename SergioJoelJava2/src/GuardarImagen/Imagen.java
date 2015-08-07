@@ -99,6 +99,12 @@ public class Imagen extends javax.swing.JFrame {
        try{
        FileInputStream fis=new FileInputStream(file);
        byte[] datosImagen=IOUtils.toByteArray(fis);
+       Galeria g1=new Galeria();
+       g1.setDatosImagen(datosImagen);
+       g1.setDescripcion("Pornoteca");
+       g1.setTitulo("Mujer Luna Bella");
+       PersistenciaGaleria p=new PersistenciaGaleria();
+       p.guardar(g1);
       }catch(Exception e){}   
     }//GEN-LAST:event_jButton1ActionPerformed
 
