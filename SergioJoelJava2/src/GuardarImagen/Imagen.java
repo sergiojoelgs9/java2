@@ -5,6 +5,11 @@
  */
 package GuardarImagen;
 
+import java.io.File;
+import java.io.FileInputStream;
+import javax.swing.JFileChooser;
+import org.apache.commons.io.IOUtils;
+
 /**
  *
  * @author T-107
@@ -85,7 +90,16 @@ public class Imagen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       //abrir caja
+       JFileChooser selector=new JFileChooser();
+       //selecionamos
+       selector.showOpenDialog(this);
+       //importa
+       File file=selector.getSelectedFile();
+       try{
+       FileInputStream fis=new FileInputStream(file);
+       byte[] datosImagen=IOUtils.toByteArray(fis);
+      }catch(Exception e){}   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
